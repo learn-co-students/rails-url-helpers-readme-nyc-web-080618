@@ -1,3 +1,6 @@
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
+  <!-- <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div> sinatra way
+  <div><%= link_to post.title, "/posts/#{post.id}" %></div> conversion 1
+  <div><%= link_to post.title, post_path(post.id) %></div>  conversion 2
+  <div><%= link_to post.title, post_path(post) %></div>    final version 
 <% end %>
